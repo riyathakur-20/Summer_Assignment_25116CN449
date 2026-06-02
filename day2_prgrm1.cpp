@@ -1,21 +1,23 @@
-//Write a program to Count digits in a number. 
+//Write a program to Find sum of digits of a number. 
+
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    int num, count = 0;
+    int num, digit, sum = 0;
 
     cout << "Enter a number: ";
     cin >> num;
 
     while(num != 0)
     {
+        digit = num % 10;
+        sum = sum + digit;
         num = num / 10;
-        count++;
     }
 
-    cout << "Total digits = " << count;
+    cout << "Sum of digits = " << sum;
 
     return 0;
 }
