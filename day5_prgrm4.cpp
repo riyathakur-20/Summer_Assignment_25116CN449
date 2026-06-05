@@ -1,0 +1,33 @@
+//Write a program to Find largest prime factor.
+
+#include <iostream>
+using namespace std;
+
+bool isPrime(int n) {
+    if(n <= 1)
+        return false;
+
+    for(int i = 2; i <= n / 2; i++) {
+        if(n % i == 0)
+            return false;
+    }
+
+    return true;
+}
+
+int main() {
+    int num, largestPrimeFactor = 1;
+
+    cout << "Enter a number: ";
+    cin >> num;
+
+    for(int i = 2; i <= num; i++) {
+        if(num % i == 0 && isPrime(i)) {
+            largestPrimeFactor = i;
+        }
+    }
+
+    cout << "Largest Prime Factor = " << largestPrimeFactor;
+
+    return 0;
+}
