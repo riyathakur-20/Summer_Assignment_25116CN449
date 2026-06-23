@@ -1,11 +1,10 @@
-//51
-
 #include <iostream>
 using namespace std;
 
 int main()
 {
     int n;
+
     cout << "Enter size of array: ";
     cin >> n;
 
@@ -18,19 +17,22 @@ int main()
     }
 
     int largest = arr[0];
-    int smallest = arr[0];
+    int secondLargest = arr[0];
 
     for(int i = 1; i < n; i++)
     {
         if(arr[i] > largest)
+        {
+            secondLargest = largest;
             largest = arr[i];
-
-        if(arr[i] < smallest)
-            smallest = arr[i];
+        }
+        else if(arr[i] > secondLargest && arr[i] != largest)
+        {
+            secondLargest = arr[i];
+        }
     }
 
-    cout << "Largest Element = " << largest << endl;
-    cout << "Smallest Element = " << smallest;
+    cout << "Second Largest Element = " << secondLargest;
 
     return 0;
 }
